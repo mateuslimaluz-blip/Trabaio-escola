@@ -1,0 +1,333 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header img{
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+/*  Fazendo a responsividade Pra outros moveis KKK*/
+@media (max-width: 768px) {
+    .menu_principia ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .topo{
+        height: auto;
+        padding: 15px ;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .Conter_F {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px){
+    .Conter_F{
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+.topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(132, 0, 0);
+    height: 130px;
+    padding: 20px 0;
+    width: 100%;
+}
+.Titulo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.logo{
+    width: 80px;
+    height: auto;
+}
+.Titulo img{
+    width: 100px;
+    height: auto;
+    margin: 0 5px;
+}
+.menu_principia ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    gap: 30px;
+    padding: 12px 0px;
+    margin: 0; 
+}
+.sub_item{
+    position: relative;
+    color: rgb(7, 7, 7);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.sub_item > a{
+cursor: pointer;
+padding: 15px;
+color: rgb(80, 66, 66);
+text-decoration: none;
+display: block;
+transition: color 0.5s ease;
+}
+.sub_menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* aqui é a decoração ⬇️*/
+    background-color: #000000;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    padding:5px 0 ;
+    list-style: none;
+    min-width: 200px;
+    z-index: 10;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transition 0.2 ease;
+    pointer-events: none;
+    opacity: 0;
+}
+.sub_menu li a {
+    padding: 10px 20px;
+    font-size: 15px ;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.5s ease ;
+}
+.sub_menu li a:hover{
+    background-color: #3d3c3c;
+    color: #c9c7c7;
+}
+.sub_item.ativo .sub_menu{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.sub_item > a:hover{
+    color: #8b7e07;
+}
+@media (hover:hover) {
+    .sub_item:hover .sub_menu{
+        display: block;
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.redes_sociais a{ /*Parte de estilização dos icones facebook e email */
+    color: #000000;
+    font-size: 30px;
+    margin: 5px;
+    display: inline-block;
+    transition: color 0.3s ease;
+    justify-content: space-around;
+}
+.redes_sociais a:hover{
+    color: #6ea801;
+    transform: scale(1.2);
+}
+ /* Parte de cima apenas o menu */
+ /* FOOTER CSS estilização */
+
+ /* SLIDES ALI DO SITE */
+.slider{
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+.slider_wrapper{
+    display: flex;
+    height: 100%;
+    transition: transform 0.7s ease-in-out;
+}
+.slide{
+    width: 100%;
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    box-sizing: border-box;
+    color: #c49704b6;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slide:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#slide1 { background-image: url('https://imgs.search.brave.com/0cdjBt0O6DaTHc2WCHm_AbZGMZgLNSDsgICkpCq9YEs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ZhLzYx/L2VlL2ZhNjFlZTY1/MGE5MTY4NDQxODM4/MzgwNzk5YTZjMDBk/LmpwZw');}
+#slide2 {background-image: url('https://www.arsenalcatolico.com.br/wp-content/uploads/2025/05/imaculado-coracao-nossa-senhora-de-fatima-1024x683.avif');}
+#slide3 {background-image: url('https://www.arsenalcatolico.com.br/wp-content/uploads/2025/04/sagrado-coracao-de-jesus-cristo-nosso-senhor-768x1241.avif');}
+
+.conteudo_slide{
+    z-index: 2;
+    max-width: 600px;
+    position: relative;
+}
+
+.categoria {
+    background-color: #c7a44a;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.conteudo_slide h1{
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.descricao{
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.slider_btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    border:none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.slider_btn:hover{
+    background-color: white
+}
+.antes_btn{ left: 30px;}
+.proximo_btn{ right: 30px;}
+
+.slider_paginacao{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+.paginacao_bar{
+    width: 40px;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+}
+.paginacao_bar.ativo{
+    background-color: white;
+}
+            /* AQUI VEM O MAIN KKKKKKKKKKKKKKKKKKKKKKK*/
+main{
+    padding: 50px 10%;
+    background-color:  #ffffff;
+    color: #3d3c3c;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    text-align: left;
+}
+main h1{
+    font-size: 2.5rem;
+    color: #8b0000;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+main h2{
+    font-size: 1.8rem;
+    color: #6b4f1d;
+    margin-bottom: 15px;
+    margin-top: 40px;
+    padding-bottom: 5px;
+}
+main p{
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+main ul{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+main ul li{
+    background-color: #ffffff;
+    border-left: 5px solid #c7a44a;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.05);
+}
+/* PARTE FOOTER*/
+.Footer_F{
+    background-color: #464545;
+    color: #a3a3a3;
+    padding: 60px 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.Conter_F{
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+/* display grid serve pra organizar como coluna */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+@media (min-width: 760px){
+    .Conter_F{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.Coluna_F h3{
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+.Coluna_F p, .Coluna_F ul li{
+    margin-bottom: 16px;
+}
+.Coluna_F ul{
+    list-style: none;
+    padding: 1px;
+    margin: 1px;
+}
+.Coluna_F a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.Coluna_F a:hover{
+    color: rgb(173, 148, 2);
+}
